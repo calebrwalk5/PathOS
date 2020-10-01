@@ -10,9 +10,8 @@ rem s = score
 rem i = multipliers
 rem n = wallpiece counter, gets reloaded by bonus engine
 
-cursor off
 goto logo
-
+%include 'mouse.lib'
 
 waitforenter:
   waitkey x

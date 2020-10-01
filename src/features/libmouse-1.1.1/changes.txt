@@ -1,0 +1,53 @@
+Version 1.1.1
+	* Fixed a bug that caused stack corruption if 'mouselib_show' was
+		called multiple times without 'mouselib_hide'.
+	* 'mouselib_show' and 'mouselib_hide' no longer alter the cursor
+		position.
+
+
+Version 1.1.0
+	* Fixed a bug causing mouse movement to glitch in QEMU.
+	* Added library documentation.
+ 	* Added Event Mode, a method of creating event driven programs.
+ 	* Added a new demonstration program to show event mode.
+ 	* Cleaned up demonstration programs.
+	* Added new library calls:
+		* mouselib_setup
+		* mouselib_eventmode_start
+		* mouselib_eventmode_stop
+		* mouselib_eventmode_assignhandler
+		* mouselib_eventmode_releasehandler
+	* Added new events:
+		* MOUSELIB_EVENT_MOVE
+		* MOUSELIB_EVENT_LEFTCLICK
+		* MOUSELIB_EVENT_MIDDLECLICK
+		* MOUSELIB_EVENT_RIGHTCLICK
+		* MOUSELIB_EVENT_LEFTRELEASE
+		* MOUSELIB_EVENT_MIDDLERELEASE
+		* MOUSELIB_EVENT_RIGHTRELEASE
+		* MOUSELIB_EVENT_KEYBOARD
+	* Added library version constant.
+	* Library can now be included anywhere in the program.
+	* Library will prevent itself from being included multiple times.
+	  
+
+Version 1.0.0
+	* Initial Release
+	* Has the following library calls:
+		* mouselib_install_driver
+		* mouselib_locate
+		* mouselib_move
+		* mouselib_show
+		* mouselib_hide
+		* mouselib_range
+		* mouselib_wait
+		* mouselib_anyclick
+		* mouselib_leftclick
+		* mouselib_rightclick
+		* mouselib_middleclick
+		* mouselib_input_wait
+		* mouselib_scale
+		* mouselib_remove_driver
+		* mouselib_freemove
+		
+   
