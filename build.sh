@@ -67,6 +67,7 @@ rm -rf tmp-loop
 echo ">>> Creating CD-ROM ISO image..."
 
 rm -f image/PathOS.iso
+genisoimage -quiet -V 'PathOS' -input-charset iso8859-1 -o image/PathOS.iso -b PathOS.flp image/ || exit
 mkisofs -quiet -V 'PathOS' -input-charset iso8859-1 -o image/PathOS.iso -b PathOS.flp image/ || exit
 
 echo '>>> Done!'
