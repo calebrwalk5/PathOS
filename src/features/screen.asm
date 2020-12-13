@@ -1,10 +1,4 @@
-; ==================================================================
-; MikeOS -- The Mike Operating System kernel
-; Copyright (C) 2006 - 2019 MikeOS Developers -- see doc/LICENSE.TXT
-;
-; SCREEN HANDLING SYSTEM CALLS
-; ==================================================================
-
+; PathOS
 ; ------------------------------------------------------------------
 ; os_print_string -- Displays text
 ; IN: SI = message location (zero-terminated string)
@@ -737,7 +731,7 @@ os_input_dialog:
 ; ------------------------------------------------------------------
 ; os_dialog_box -- Print dialog box in middle of screen, with button(s)
 ; IN: AX, BX, CX = string locations (set registers to 0 for no display)
-; IN: DX = 0 for single 'OK' dialog, 1 for two-button 'OK' and 'Cancel'
+; IN: DX = 0 for single 'OK' dialog, 1 for two-button 'OK' and 'CLI'
 ; OUT: If two-button mode, AX = 0 for OK and 1 for cancel
 ; NOTE: Each string is limited to 40 characters
 
@@ -838,7 +832,7 @@ os_dialog_box:
 	mov si, .ok_button_string
 	call os_print_string
 
-	mov dl, 44			; Cancel button
+	mov dl, 44			; CLI button
 	mov dh, 14
 	call os_move_cursor
 	mov si, .cancel_button_string
@@ -945,9 +939,9 @@ os_dialog_box:
 
 
 	.ok_button_string	db 'OK', 0
-	.cancel_button_string	db 'Cancel', 0
+	.cancel_button_string	db 'CLI', 0
 	.ok_button_noselect	db '   OK   ', 0
-	.cancel_button_noselect	db '   Cancel   ', 0
+	.cancel_button_noselect	db '   CLI   ', 0
 
 	.tmp dw 0
 
