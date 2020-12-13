@@ -1,5 +1,5 @@
 ; ------------------------------------------------------------------
-; Include file for MikeOS program development (API version 17)
+; Include file for PathOS program development (MikeOS API version 17)
 ; ------------------------------------------------------------------
 
 ; ------------------------------------------------------------------
