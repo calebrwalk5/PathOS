@@ -1,7 +1,5 @@
 ; ==================================================================
-; MikeOS -- The Mike Operating System kernel
-; Copyright (C) 2006 - 2019 MikeOS Developers -- see doc/LICENSE.TXT
-;
+; PathOS Sound
 ; PC SPEAKER SOUND ROUTINES
 ; ==================================================================
 
