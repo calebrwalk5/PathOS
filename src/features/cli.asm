@@ -969,7 +969,7 @@ crash:
 
 	prompt			db '> ', 0
 
-	help_text		db 'Commands: DIR, CRASH, LS, COPY, REN, DEL, CAT, SIZE, CLS, HELP, TIME, DATE, VER, EXIT', 13, 10, 0
+	help_text		db 'Commands: DIR, CRASH, LS, COPY, REN, DEL, SIZE, CLS, HELP, TIME, DATE, VER, EXIT', 13, 10, 0
 	invalid_msg		db 'No such command or program', 13, 10, 0
 	nofilename_msg		db 'No filename or not enough filenames', 13, 10, 0
 	notfound_msg		db 'File not found', 13, 10, 0
@@ -992,9 +992,10 @@ crash:
 	copy_string		db 'COPY', 0
 	size_string		db 'SIZE', 0
 	list_string		db 'LS', 0
+	crash_string	db 'CRASH', 0
 
 	kern_file_string	db 'KERNEL', 0
-	kern_warn_msg		db 'Cannot execute kernel file!', 13, 10, 0
+	kern_warn_msg		db 'Why would you try to run the kernel file?', 13, 10, 0
 
 
 ; ==================================================================

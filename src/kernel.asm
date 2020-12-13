@@ -11,7 +11,7 @@
 
 	BITS 16
 
-	%DEFINE PATHOS_VER '0.0.1'	; OS version number
+	%DEFINE PATHOS_VER '0.0.2'	; OS version number
 	%DEFINE MIKEOS_VER '4.6.1'	; MikeOS version number
 	%DEFINE MIKEOS_API_VER 17	; API version for programs to check
 
@@ -388,6 +388,7 @@ not_bas_extension:
 	%INCLUDE "features/sound.asm"
 	%INCLUDE "features/string.asm"
 	%INCLUDE "features/basic.asm"
+	;%INCLUDE "features/libmouse-1.1.1/mouse.asm"
 
 
 ; ==================================================================
