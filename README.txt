@@ -1,3 +1,4 @@
+GNU GENERAL PUBLIC LICENSE
 https://github.com/calebrwalk5
 https://github.com/mig-hub/mikeOS
 PathOS 0.0.2! Big changes coming in version 0.1.0!
