@@ -1,6 +1,6 @@
 ; ==================================================================
 ; PathOS -- The Path Operating System kernel
-; Copyright (C) PathOS has no copyright
+; Copyright (C) GNU GENERAL PUBLIC LICENSE
 ;
 ; This is loaded from the drive by BOOTLOAD.BIN, as KERNEL.BIN.
 ; First we have the system call vectors, which start at a static point

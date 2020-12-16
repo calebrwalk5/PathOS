@@ -2,6 +2,7 @@
 
 # This script assembles the PathOS bootloader, kernel and programs
 # (If you need to blank the floppy image: 'mkdosfs image/PathOS.flp')
+# GNU GENERAL PUBLIC LICENSE
 
 
 if test "`whoami`" != "root" ; then
