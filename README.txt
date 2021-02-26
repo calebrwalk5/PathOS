@@ -13,3 +13,6 @@ How to build disk image:
 sudo su
 chmod +x build.sh
 ./build.sh
+
+How to buld disk image on Windows:
+start build-windows.exe
