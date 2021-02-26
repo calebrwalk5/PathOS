@@ -15,4 +15,4 @@ chmod +x build.sh
 ./build.sh
 
 How to buld disk image on Windows:
-start build-windows.exe
+Compile build-windows.c then run the exe, you may have to run it as administrator 
