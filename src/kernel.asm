@@ -11,7 +11,7 @@
 
 	BITS 16
 
-	%DEFINE PATHOS_VER '0.0.2'	; OS version number
+	%DEFINE PATHOS_VER '0.0.3'	; OS version number
 	%DEFINE MIKEOS_VER '4.6.1'	; MikeOS version number
 	%DEFINE MIKEOS_API_VER 17	; API version for programs to check
 
