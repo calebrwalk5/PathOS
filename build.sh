@@ -27,10 +27,12 @@ nasm -O0 -w+orphan-labels -f bin -o src/boot/boot.bin src/boot/bootload.asm || e
 echo ">>> Assembling PathOS kernel..."
 
 cd src
-nasm -f elf -o ../mlib.a mlib.asm
 nasm -O0 -w+orphan-labels -f bin -o kernel.bin kernel.asm || exit
 cd ..
 
+cd clib
+nasm -f elf -o ../mlib.a mlib.asm || exit
+cd ..
 
 echo ">>> Assembling programs..."
 
