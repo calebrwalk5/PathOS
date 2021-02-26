@@ -1,7 +1,8 @@
 GNU GENERAL PUBLIC LICENSE
-Writer: https://github.com/calebrwalk5
+Programmer: https://github.com/calebrwalk5
 API: https://github.com/mig-hub/mikeOS
-PathOS 0.0.2! Big changes coming in version 0.1.0!
+C Library: https://github.com/I8087/mlib
+PathOS 0.0.3! Big changes coming in version 0.1.0!
 
 Path Operating System is a 16-bit operating system written in assembly and basic. PathOS uses the MikeOS API for many of its functions. 
 
