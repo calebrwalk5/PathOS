@@ -10,7 +10,7 @@ int main() {
   printf("Assembling PathOS kernel\n");
   system("cd src & nasm -00 -f -o kernel.bin kernel.asm");
   printf("Compiling libraries\n");
-  system("cd clib & nasm -f elf -o ..\mlib.a mlib.asm");
+  system("cd clib & nasm -f elf -o ../mlib.a mlib.asm");
   return 0;
 }
 
