@@ -4,6 +4,7 @@
 // This script is in development, it might not work for you!
 
 int main() {
+  printf("You're gonna need nasm, if you dont have it :)\n");
   printf("PathOS Build Script For Windows\n");
   printf("Assembling bootloader\n");
   system("cd src/boot/ & nasm -00 -f bin -o bootload.bin bootload.bin");
