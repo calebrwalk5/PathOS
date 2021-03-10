@@ -1,6 +1,6 @@
 ; ==================================================================
 ; PathOS -- The Path Operating System kernel
-; Copyright (C) PathOS has no copyright
+; Copyright (C) GNU GENERAL PUBLIC LICENSE 
 ;
 ; COMMAND LINE INTERFACE
 ; ==================================================================
