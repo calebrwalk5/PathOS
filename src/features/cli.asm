@@ -69,6 +69,7 @@ get_cmd:				; Main processing loop
 
 	mov di, list_string		; 'CRASH' entered?
 	call os_string_compare
+	call os_clear_screen
 	jc near exit
 
 	mov di, dir_string		; 'DIR' entered?
@@ -940,6 +941,10 @@ type_name:
 
 exit:
 	ret
+	call os_clear_screen
+	mov si, notfound_msg
+	call os_print_string
+	
 
 
 ; =====================================================================
@@ -950,6 +955,7 @@ crash:
 	call os_print_string
 	jmp get_cmd
 	ret
+	call exit
 
 
 ; =====================================================================
