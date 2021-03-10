@@ -1,8 +1,4 @@
-rem Memory Manipulator (MEMEDIT.BAS), version 3.2.0
-rem An advanced memory modification tool for MikeOS
-rem Copyright (C) Joshua Beck, 2015
-rem Email: zerokelvinkeyboard@gmail.com
-rem Licenced under the GNU General Public Licence v3, see LICENCE
+rem PathOS Memory Manipulator
 
 rem Requires the MB++ library, version 4.0.0 minimum
 include "mbpp.bas"
