@@ -358,7 +358,7 @@ not_bas_extension:
 	ext_string_1		db 'Invalid filename extension! You can', 0
 	ext_string_2		db 'only execute .BIN or .BAS programs.', 0
 
-	program_finished_msg	db '>>> Program finished --- press a key to continue...', 0
+	program_finished_msg	db 'Program Complete, Press Any Key To Continue', 0
 
 
 ; ------------------------------------------------------------------
