@@ -388,7 +388,8 @@ not_bas_extension:
 	%INCLUDE "features/sound.asm"
 	%INCLUDE "features/string.asm"
 	%INCLUDE "features/basic.asm"
-	;%INCLUDE "features/libmouse-1.1.1/mouse.asm"
+	%INCLUDE "../clib/mlib.asm"
+	%INCLUDE "features/libmouse-1.1.1/mouse.asm"
 
 
 ; ==================================================================
