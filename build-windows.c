@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <Windows.h>
 
-// This script is in development, it might not work for you!
-
 int main() {
   printf("You need need NASM, if you don't have it (go to nasm.us)\n");
   printf("PathOS Build Script For Windows\n");
@@ -12,6 +10,7 @@ int main() {
   system("cd src & nasm -00 -f -o kernel.bin kernel.asm");
   printf("Compiling libraries\n");
   system("cd clib & nasm -f elf -o ../mlib.a mlib.asm");
+  system("start https://www.nasm.us/");
   return 0;
 }
 
