@@ -32,6 +32,7 @@ cd ..
 
 cd clib
 nasm -f elf -o ../mlib.a mlib.asm || exit
+cp ../mlib.a ../src/mlib.a
 cd ..
 
 echo ">>> Assembling programs..."
