@@ -2,7 +2,7 @@ GNU GENERAL PUBLIC LICENSE
 Programmer: https://github.com/calebrwalk5
 API: https://github.com/mig-hub/mikeOS
 C Library: https://github.com/I8087/mlib
-PathOS 0.0.3! Big changes coming in version 0.1.0!
+PathOS 0.0.4! Big changes coming in version 0.1.0!
 
   --Version 0.0.4--
 -Improved C library
