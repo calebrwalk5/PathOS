@@ -2,8 +2,9 @@ bits 16
 
 section .text
 
-; Include MikeOS API vectors.
+; Include PathOS API vectors.
 %include "../include/mikedev.inc"
+%include "../src/kernel.asm"
 
 ; Include the C runtime function.
 %include "crt0.asm"
