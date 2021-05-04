@@ -221,7 +221,7 @@ skip_return:
 	jmp loopy
 
 
-get_input:				; Get cursor keys and Q
+get_input:				; Get arrow keys and Q
 	call os_wait_for_key
 	cmp ah, KEY_UP
 	je go_up
