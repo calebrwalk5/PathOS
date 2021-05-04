@@ -5,6 +5,7 @@
 
 	BITS 16
 	%INCLUDE "mikedev.inc"
+	%INCLUDE "clib.h"
 	ORG 32768
 
 
@@ -45,6 +46,11 @@ main_start:
 	rep cmpsb			; Does the extension contain 'PCX'?
 	je valid_pcx_extension		; Skip ahead if so
 
+	mov si, c_extension
+	mov cx, 1
+	rep cmpsb			; Does the extension contain 'C'
+	je valid_c_extension		; Skip ahead if so
+	
 					; Otherwise show error dialog
 	mov dx, 0			; One button for dialog box
 	mov ax, err_string
@@ -125,7 +131,24 @@ draw_background:
 
 
 
-	; Meanwhile, if it's a text file...
+	; Meanwhile, if it's a text or C file...
+
+valid_c_extension:
+	mov ax, bx
+	mov cx, 36864
+	call os_load_file
+	
+	add bx, 36864
+	
+	mov cx, 0
+	mov word [skiplines], 0
+	
+	pusha
+	mov ax, c_title_msg
+	mov bx, c_footer_msg
+	mov cx, 00100000b		; Green text on white background
+	call os_draw_background
+	popa
 
 valid_txt_extension:
 	mov ax, bx
@@ -252,14 +275,18 @@ close:
 	txt_extension	db 'TXT', 0
 	bas_extension	db 'BAS', 0
 	pcx_extension	db 'PCX', 0
+	c_extension	db 'C',   0
 
-	err_string	db 'SELECT TXT OR BAS!!!', 0
+	err_string	db 'SELECT TXT, BAS, OR C', 0
 
 	title_msg	db 'PathOS File Viewer', 0
-	footer_msg	db 'Select a TXT or BAS file or press Esc to exit', 0
+	footer_msg	db 'Select a TXT, BAS, or C file or press Esc to exit', 0
 
 	txt_title_msg	db 'PathOS Text File Viewer', 0
 	txt_footer_msg	db 'Use arrow keys to scroll and Q to quit', 0
+	
+	c_title_msg	db 'PathOS C Editor', 0
+	c_footer_msg	db 'Use arrow keys to scrill and Q to quit', 0
 
 	skiplines	dw 0
 
