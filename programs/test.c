@@ -2,6 +2,6 @@
 #include <stdio.h>
 
 int main() {
-  printf("Hello, PathOS");
+  printf("Hello, PathOS\n");
   return 0;
 }
