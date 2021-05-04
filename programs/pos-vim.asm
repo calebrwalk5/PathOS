@@ -1,5 +1,5 @@
 ; ------------------------------------------------------------------
-; Program to edit text files
+; Program to edit text and C files
 ; ------------------------------------------------------------------
 
 
@@ -34,18 +34,6 @@ main_start:
 
 	dec di
 
-	mov si, bas_extension
-	mov cx, 3
-	rep cmpsb			; Does the extension contain 'BAS'?
-	je near valid_txt_extension	; Skip ahead if so
-
-	dec di
-
-	mov si, pcx_extension
-	mov cx, 3
-	rep cmpsb			; Does the extension contain 'PCX'?
-	je valid_pcx_extension		; Skip ahead if so
-
 	mov si, c_extension
 	mov cx, 1
 	rep cmpsb			; Does the extension contain 'C'
@@ -61,27 +49,7 @@ main_start:
 	jmp main_start			; And retry
 
 
-valid_pcx_extension:
-	mov ax, bx
-	mov cx, 36864			; Load PCX at 36864 (4K after program start)
-	call os_load_file
-
-
-	mov ah, 0			; Switch to graphics mode
-	mov al, 13h
-	int 10h
-
-
-	mov ax, 0A000h			; ES = video memory
-	mov es, ax
-
-
-	mov si, 36864+80h		; Move source to start of image data
-					; (First 80h bytes is header)
-
-	mov di, 0			; Start our loop at top of video RAM
-
-decode:
+ecode:
 	mov cx, 1
 	lodsb
 	cmp al, 192			; Single pixel or string?
@@ -129,27 +97,50 @@ draw_background:
 	call os_draw_background
 	ret
 
-
-
 	; Meanwhile, if it's a text or C file...
 
 valid_c_extension:
 	mov ax, bx
-	mov cx, 36864
+	mov cx, 36864			; Load file 4K after program start
 	call os_load_file
-	
+
+
+	; Now BX contains the number of bytes in the file, so let's add
+	; the load offset to get the last byte of the file in RAM
+
 	add bx, 36864
-	
-	mov cx, 0
+
+
+	mov cx, 0			; Lines to skip when rendering
 	mov word [skiplines], 0
-	
+
+
 	pusha
-	mov ax, c_title_msg
+	mov ax, c_title_msg		; Set up screen
 	mov bx, c_footer_msg
 	mov cx, 00100000b		; Green text on white background
 	call os_draw_background
 	popa
+	
+c_start:
+	pusha
 
+	mov bl, 00100000b		; Green text on white background
+	mov dh, 2
+	mov dl, 0
+	mov si, 80
+	mov di, 23
+	call os_draw_block		; Overwrite old text for scrolling
+
+	mov dh, 2			; Move cursor to near top
+	mov dl, 0
+	call os_move_cursor
+
+	popa
+
+	mov si, 36864			; Start of C data
+	mov ah, 0Eh
+	
 valid_txt_extension:
 	mov ax, bx
 	mov cx, 36864			; Load file 4K after program start
@@ -273,14 +264,12 @@ close:
 
 
 	txt_extension	db 'TXT', 0
-	bas_extension	db 'BAS', 0
-	pcx_extension	db 'PCX', 0
 	c_extension	db 'C',   0
 
-	err_string	db 'SELECT TXT, BAS, OR C', 0
+	err_string	db 'SELECT TXT OR C', 0
 
 	title_msg	db 'PathOS File Viewer', 0
-	footer_msg	db 'Select a TXT, BAS, or C file or press Esc to exit', 0
+	footer_msg	db 'Select a TXT or C file. Press Esc to exit', 0
 
 	txt_title_msg	db 'PathOS Text File Viewer', 0
 	txt_footer_msg	db 'Use arrow keys to scroll and Q to quit', 0
