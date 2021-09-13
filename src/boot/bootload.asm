@@ -21,7 +21,7 @@
 ; Note: some of these values are hard-coded in the source!
 ; Values are those used by IBM for 1.44 MB, 3.5" diskette
 
-OEMLabel		db "MIKEBOOT"	; Disk label
+OEMLabel		db "POSBOOT"	; Disk label
 BytesPerSector		dw 512		; Bytes per sector
 SectorsPerCluster	db 1		; Sectors per cluster
 ReservedForBoot		dw 1		; Reserved sectors for boot record
@@ -333,7 +333,7 @@ l2hts:			; Calculate head, track and sector settings for int 13h
 ; ------------------------------------------------------------------
 ; STRINGS AND VARIABLES
 
-	kern_filename	db "KERNEL  BIN"	; MikeOS kernel filename
+	kern_filename	db "KERNEL  BIN"
 
 	disk_error	db "Floppy error! Press any key...", 0
 	file_not_found	db "KERNEL.BIN not found!", 0
