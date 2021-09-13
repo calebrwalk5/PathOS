@@ -7,7 +7,7 @@ section .text
 %include "../src/kernel.asm"
 
 ; Include the C runtime function.
-%include "crt0.asm"
+%include "../include/crt0.asm"
 
 ; Include the disk functions.
 %include "get_file_list.asm"
