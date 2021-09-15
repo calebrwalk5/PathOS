@@ -1,7 +1,4 @@
 ; ==================================================================
-; The Mike Operating System bootloader
-; Copyright (C) 2006 - 2019 MikeOS Developers -- see doc/LICENSE.TXT
-;
 ; Based on a free boot loader by E Dehling. It scans the FAT12
 ; floppy for KERNEL.BIN (the MikeOS kernel), loads it and executes it.
 ; This must grow no larger than 512 bytes (one sector), with the final
@@ -38,7 +35,7 @@ LargeSectors		dd 0		; Number of LBA sectors
 DriveNo			dw 0		; Drive No: 0
 Signature		db 41		; Drive signature: 41 for floppy
 VolumeID		dd 00000000h	; Volume ID: any number
-VolumeLabel		db "MIKEOS     "; Volume Label: any 11 chars
+VolumeLabel		db "PATHOS     "; Volume Label: any 11 chars
 FileSystem		db "FAT12   "	; File system type: don't change!
 
 
