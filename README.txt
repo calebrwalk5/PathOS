@@ -1,8 +1,4 @@
 GNU GENERAL PUBLIC LICENSE
-Programmer: https://github.com/calebrwalk5
-API: https://github.com/mig-hub/mikeOS
-C Library: https://github.com/I8087/mlib
-2048: https://github.com/ZeroKelvinKeyboard/MikeOS-Apps/tree/master/2048
 PathOS 0.0.5! Big changes coming in version 0.1.0!
 
   --Version 0.0.5--
@@ -21,3 +17,9 @@ chmod +x build.sh
 
 How to buld disk image on Windows:
 Compile build-windows.c then run the exe, you may have to run it as administrator 
+
+THANK YOU
+http://mikeos.sourceforge.net/
+https://github.com/I8087
+https://github.com/ZeroKelvinKeyboard/
+https://github.com/Camroku
