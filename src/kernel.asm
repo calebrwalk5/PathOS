@@ -351,12 +351,12 @@ not_bas_extension:
 	bin_ext			db 'BIN'
 	bas_ext			db 'BAS'
 
-	kerndlg_string_1	db 'Cannot load and execute PathOS kernel!', 0
-	kerndlg_string_2	db 'KERNEL.BIN is the core of PathOS, and', 0
-	kerndlg_string_3	db 'is not a normal program.', 0
+	kerndlg_string_1	db 'ERROR.', 0
+	kerndlg_string_2	db 'DO NOT TRY', 0
+	kerndlg_string_3	db 'TO RUN THE KERNEL', 0
 
-	ext_string_1		db 'Invalid filename extension! You can', 0
-	ext_string_2		db 'only execute .BIN or .BAS programs.', 0
+	ext_string_1		db 'ERROR', 0
+	ext_string_2		db '1D10T', 0
 
 	program_finished_msg	db 'Program Complete, Press Any Key To Continue', 0
 
