@@ -351,9 +351,9 @@ not_bas_extension:
 	bin_ext			db 'BIN'
 	bas_ext			db 'BAS'
 
-	kerndlg_string_1	db 'ERROR.', 0
-	kerndlg_string_2	db 'DO NOT TRY', 0
-	kerndlg_string_3	db 'TO RUN THE KERNEL', 0
+	kerndlg_string_1	db 'ERROR', 0
+	kerndlg_string_2	db '5TUP1D', 0
+	kerndlg_string_3	db 'DO NOT TRY TO RUN THE KERNEL', 0
 
 	ext_string_1		db 'ERROR', 0
 	ext_string_2		db '1D10T', 0
